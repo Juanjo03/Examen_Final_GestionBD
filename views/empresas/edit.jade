@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+    h1.
+        Empresa #{empresa.nombre}
+    form(action='/empresas/#{empresa.nombre}', method='put', name='updateempresa', enctype='application/x-www-form-urlencoded')
+        p Nombre:
+            input#inputNombre(type='text', value='#{empresa.nombre}', name='nombre')
+        p Nit:
+            input#inputNit(type='text', value='#{empresa.nit}', name='nit')
+        p Encargado:
+            input#inputEncargado(type='text', value='#{empresa.encargado}', name='encargado')
+        p Domicilio:
+            input#inputDomicilio(type='text', value='#{empresa.domicilio}', name='domicilio')
+        p
+            input(type='hidden', value='PUT', name='_method')
+        p
+            button#btnSubmit(type='submit').
+                Actualizar

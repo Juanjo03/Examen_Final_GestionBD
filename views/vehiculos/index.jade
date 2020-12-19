@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    h1.
+        Vehiculos
+    div
+        table.table.table-hover
+            tbody
+                each vehiculo in vehiculos
+                    tr
+                        td=vehiculo.placa
+                        td=vehiculo.marca
+                        td=vehiculo.modelo
+                        td=vehiculo.tipo
+                        td=vehiculo.capacidad
+                        td
+                            form(action='/vehiculos/#{vehiculo.nombre}', method='delete', enctype='application/x-www-form-urlencoded')
+                                input(type='hidden', value='DELETE', name='_method')
+                                button(type='submit').
+                                    Borrar
+                            p
+                                a(href='/vehiculos/editar') Editar

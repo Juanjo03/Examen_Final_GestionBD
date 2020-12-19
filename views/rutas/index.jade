@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    h1.
+        Rutas
+    div
+        table.table.table-hover
+            tbody
+                each ruta in rutas
+                    tr
+                        td=ruta.numeroGuia
+                        td=ruta.origen
+                        td=ruta.destino
+                        td=ruta.viajero
+                        td=ruta.empresa
+                        td=ruta.vehiculo
+                        td
+                            form(action='/rutas/#{ruta.numeroGuia}', method='delete', enctype='application/x-www-form-urlencoded')
+                                input(type='hidden', value='DELETE', name='_method')
+                                button(type='submit').
+                                    Borrar
+                            p
+                                a(href='/rutas/editar') Editar

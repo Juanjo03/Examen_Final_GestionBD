@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    h1.
+        Vehiculo #{vehiculo.placa}
+    form(action='/vehiculos/#{vehiculo.nombre}', method='put', name='updatevehiculo', enctype='application/x-www-form-urlencoded')
+        p Placa:
+            input#inputPlaca(type='text', value='#{vehiculo.placa}', name='placa')
+        p Marca:
+            input#inputMarca(type='text', value='#{vehiculo.marca}', name='marca')
+        p Modelo:
+            input#inputModelo(type='text', value='#{vehiculo.modelo}', name='modelo')
+        p Tipo:
+            input#inputTipo(type='text', value='#{vehiculo.tipo}', name='tipo')
+        p Capacidad:
+            input#inputCapacidad(type='text', value='#{vehiculo.capacidad}', name='capacidad')
+        p
+            input(type='hidden', value='PUT', name='_method')
+        p
+            button#btnSubmit(type='submit').
+                Actualizar

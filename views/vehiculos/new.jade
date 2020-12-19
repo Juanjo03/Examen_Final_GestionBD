@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    h1.
+        Vehiculo
+    form#formAddVehiculo(name="addvehiculo", method="post", action="/vehiculos")
+        p Placa:
+            input#inputPlaca(type='text', name='placa')
+        p Marca:
+            input#inputMarca(type='text', name='marca')
+        p Modelo:
+            input#inputModelo(type='text', name='encargado')
+        p Tipo:
+            input#inputTipo(type='text', name='tipo')
+        p Capacidad:
+            input#inputCapacidad(type='text', name='capacidad')
+        p
+            button#btnSubmit(type="submit") Crear

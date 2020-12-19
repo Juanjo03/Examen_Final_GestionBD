@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+    h1.
+        Viajero #{viajero.identificacion}
+    form(action='/viajeros/#{viajero.identificacion}', method='put', name='updateviajero', enctype='application/x-www-form-urlencoded')
+        p Identificacion:
+            input#inputIdentificacion(type='text', value='#{vehiculo.identificacion}', name='identificacion')
+        p Nombres:
+            input#inputNombres(type='text', value='#{vehiculo.nombres}', name='nombres')
+        p Apellidos:
+            input#inputApellidos(type='text', value='#{vehiculo.apellidos}', name='apellidos')
+        p FechaNacimiento:
+            input#inputFechaNacimiento(type='text', value='#{vehiculo.fechaNacimiento}', name='fechaNacimiento')
+        p
+            input(type='hidden', value='PUT', name='_method')
+        p
+            button#btnSubmit(type='submit').
+                Actualizar

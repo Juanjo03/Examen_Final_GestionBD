@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    h1.
+        Empresas
+    div
+        table.table.table-hover
+            tbody
+                each empresa in empresas
+                    tr
+                        td=empresa.nombre
+                        td=empresa.nit
+                        td=empresa.encargado
+                        td=empresa.domicilio
+                        td
+                            form(action='/empresas/#{empresa.nombre}', method='delete', enctype='application/x-www-form-urlencoded')
+                                input(type='hidden', value='DELETE', name='_method')
+                                button(type='submit').
+                                    Borrar
+                            p
+                                a(href='/empresas/editar') Editar

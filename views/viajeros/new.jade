@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h1.
+        Empresa
+    form#formAddEmpresa(name="addempresa", method="post", action="/empresas")
+        p Identificacion:
+            input#inputIdentificacion(type='text', name='identificacion')
+        p Nombres:
+            input#inputNombres(type='text', name='nombres')
+        p Apellidos:
+            input#inputApellidos(type='text', name='apellidos')
+        p FechaNacimiento:
+            input#inputFechaNacimiento(type='text', name='fechaNacimiento')
+        p
+            button#btnSubmit(type="submit") Crear

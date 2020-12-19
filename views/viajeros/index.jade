@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    h1.
+        Viajeros
+    div
+        table.table.table-hover
+            tbody
+                each viajero in viajeros
+                    tr
+                        td=viajero.identificacion
+                        td=viajero.nombres
+                        td=viajero.apellidos
+                        td=viajero.fechaNacimiento
+                        td
+                            form(action='/viajeros/#{viajero.identificacion}', method='delete', enctype='application/x-www-form-urlencoded')
+                                input(type='hidden', value='DELETE', name='_method')
+                                button(type='submit').
+                                    Borrar
+                            p
+                                a(href='/viajeros/editar') Editar

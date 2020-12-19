@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h1.
+        Empresa
+    form#formAddEmpresa(name="addempresa", method="post", action="/empresas")
+        p Nombre:
+            input#inputNombre(type="text", name="nombre")
+        p Nit:
+            input#inputNit(type="text", name="nit")
+        p Encargado:
+            input#inputEncargado(type="text", name="encargado")
+        p Domicilio:
+            input#inputDomicilio(type="text", name="domicilio")
+        p
+            button#btnSubmit(type="submit") Crear
